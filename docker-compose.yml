@@ -1,0 +1,21 @@
+services:
+  hotellegs:
+    image: velfin13/hotellegs:latest
+    ports:
+      - "8088:8088"
+    restart: always
+    container_name: hotellegs
+    networks:
+      - hotel-test
+  
+  hub:
+    image: velfin13/hub:latest
+    ports:
+      - "8080:8080"
+    restart: always
+    container_name: hub
+    networks:
+      - hotel-test
+
+networks:
+  hotel-test:
